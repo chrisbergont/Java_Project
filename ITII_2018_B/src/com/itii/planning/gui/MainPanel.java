@@ -3,16 +3,16 @@ package com.itii.planning.gui;
 import javax.swing.*;
 import java.awt.*;
 
-public class MainPanel extends JPanel { //classe MainPanel dérivée d'un Jpanel
+public class MainPanel extends JPanel { // classe MainPanel dérivée d'un Jpanel
 
 	private static final long serialVersionUID = 1L;
 
-	public MainPanel() //constructeur
+	public MainPanel() // constructeur
 	{
-		setBackground(Color.gray); //on met une couleur au fond
+		setBackground(Color.gray); // on met une couleur au fond
 		// setVisible(true);
 
-		setLayout(new BorderLayout()); //on crée un borderLayout
+		setLayout(new BorderLayout()); // on crée un borderLayout
 
 		// creation des 3 pannels
 		PanneauTop pTop = new PanneauTop();
@@ -25,8 +25,8 @@ public class MainPanel extends JPanel { //classe MainPanel dérivée d'un Jpanel
 		add(pBtn, BorderLayout.EAST);
 	}
 
-	public JPanel getMainPanel() //accesseur
-	{ 
+	public JPanel getMainPanel() // accesseur
+	{
 		return this;
 	}
 }
