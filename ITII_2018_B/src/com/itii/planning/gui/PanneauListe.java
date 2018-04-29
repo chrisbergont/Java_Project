@@ -12,7 +12,7 @@ public class PanneauListe extends PanneauTache //Quand on est en mode liste
 	// constructeur
 	public PanneauListe() 
 	{
-		this.setLayout(new BorderLayout()); //on est en mode BorderLayout
+		setLayout(new BorderLayout()); //on est en mode BorderLayout
 
 		String title[] = { "Nom de la tâche", "Date", "Détails" }; //on a une liste de string
 
@@ -26,6 +26,6 @@ public class PanneauListe extends PanneauTache //Quand on est en mode liste
 		planningList.setFillsViewportHeight(true);
 		
 		JScrollPane scp = new JScrollPane(planningList); //on crée un JscrollPane si ca dépasse
-		this.add(scp, BorderLayout.CENTER); //on l'ajoute
+		add(scp, BorderLayout.CENTER); //on l'ajoute
 	}
 }

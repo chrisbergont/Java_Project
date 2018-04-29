@@ -12,7 +12,7 @@ public class MainPanel extends JPanel { //classe MainPanel dérivée d'un Jpanel
 		setBackground(Color.gray); //on met une couleur au fond
 		// setVisible(true);
 
-		this.setLayout(new BorderLayout()); //on crée un borderLayout
+		setLayout(new BorderLayout()); //on crée un borderLayout
 
 		// creation des 3 pannels
 		PanneauTop pTop = new PanneauTop();

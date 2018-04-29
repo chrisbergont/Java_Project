@@ -1,5 +1,6 @@
 package com.itii.planning.gui.task;
 
+import java.awt.Color;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -15,7 +16,7 @@ public class PanneauBas extends JPanel //nouvelle fenetre pour création de tâche
         GridLayout grilleButton = new GridLayout(1, 5, 20, 100); //on lui crée une grille (nb lignes, nb colonnes, horizontal gap, vertical gap)
         setLayout(grilleButton); //on met la grille
         
-      //Création de 3 boutons
+        //Création de 3 boutons
         JButton Annuler = new JButton("Annuler"); //Bouton annulé
         JButton OK = new JButton("OK"); //Bouton Ok
         JLabel labelInvisible = new JLabel("            "); //Bouton Vide pour décaler le bordel
@@ -24,6 +25,9 @@ public class PanneauBas extends JPanel //nouvelle fenetre pour création de tâche
         add(labelInvisible); 
         add(Annuler);
         add(OK);
+        
+        //on set la couleur
+        setBackground(Color.WHITE);
     }
 
 	public JPanel getPanneauBas() //accesseur

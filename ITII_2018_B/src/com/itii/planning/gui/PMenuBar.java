@@ -38,40 +38,37 @@ public class PMenuBar extends JMenuBar //classe de la barre de Menu
     public PMenuBar()
     {
     	//on ajoute a la fenetre tous les objets crees
-        this.add(fichier);
-        this.add(edition);
-        this.add(vue);
-        this.add(help);
+        add(fichier);
+        add(edition);
+        add(vue);
+        add(help);
         
         //ajout des objets qui appartiennent a l objet fichier
-        this.fichier.add(quitter);
+        fichier.add(quitter);
         
         //ajout des objets qui appartiennent a l objet edition
-        this.edition.add(creer);
-        this.edition.add(editer);
-        this.edition.add(marquer);
-        this.edition.add(dupliquer);
-        this.edition.add(supprimer);
+        edition.add(creer);
+        edition.add(editer);
+        edition.add(marquer);
+        edition.add(dupliquer);
+        edition.add(supprimer);
         
         //ajout des objets qui appartiennent a l objet vue
-        this.vue.add(liste);
-        this.vue.add(semaine);
-        this.vue.add(mois);
+        vue.add(liste);
+        vue.add(semaine);
+        vue.add(mois);
         
         //ajout des objets qui appartiennent a l objet aide
-        this.help.add(aide);
-        this.help.add(version);
-        
-
+        help.add(aide);
+        help.add(version);
     }
     
-	private JComboBox combo = new JComboBox();
+	private JComboBox<?> combo = new JComboBox<Object>();
 	
 	private JLabel label = new JLabel("Liste");
 
 	public static PMenuBar getMyMenuBar() //accesseur Barre de menu
 	{
-		
 		return new PMenuBar();
 	}
 }

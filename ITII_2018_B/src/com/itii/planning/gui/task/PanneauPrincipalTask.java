@@ -30,38 +30,36 @@ public class PanneauPrincipalTask extends JPanel //nouvelle fenetre pour créatio
 
 	public PanneauPrincipalTask() //constructeur
 	{
-		JPanel mainNorth = new JPanel();
-		JPanel mainCenter = new JPanel();
-		JPanel mainWest = new JPanel();
-        
-        // Ajout des zones de textes
-        JTextField nameBox = new JTextField(40);
-        JTextField dateBox = new JTextField(25);
-        JTextField commentBox = new JTextField(25);
-        
-        add(mainNorth);
-        add(mainCenter);
-        add(mainWest);
+		JPanel NamePanel = new JPanel(); //On crée un pannel
+		JTextField nameBox = new JTextField(40); //On crée une zone de text
+		NamePanel.add(nameBox); //on ajoute la zone de texte au pannel
+		
+		//Idem pour le DatePanel
+		JPanel DatePanel = new JPanel();
+		JTextField dateBox = new JTextField(25);
+		dateBox.setSize(20, 20); //on met une taille
+		DatePanel.add(calendar); //on ajoute en plus le calendrier
+		
+		//Idem pour le CommentPanel
+		JPanel CommentPanel = new JPanel();
+		JTextField commentBox = new JTextField(25);
+		commentBox.setSize(20, 40);
+		CommentPanel.add(dateBox);
+		CommentPanel.add(commentBox);
+		
+        GridLayout grille = new GridLayout(2, 0, 10, 10); //on lui crée une grille (nb lignes, nb colonnes, horizontal gap, vertical gap)
+        CommentPanel.setLayout(grille); //on ajoute la grille
 
-        mainNorth.add(nameBox);
-        mainWest.add(dateBox);
-        mainWest.add(commentBox);
-        mainCenter.add(calendar);
-        
-        dateBox.setSize(20, 20);
-        commentBox.setSize(20, 40);
-        
-        GridLayout grilleMainWest = new GridLayout(2, 0, 10, 10);
-        mainWest.setLayout(grilleMainWest);
-
+        //on dispose les panels en border layout
         setLayout(new BorderLayout());
-        add(mainNorth, BorderLayout.NORTH);
-        add(mainWest, BorderLayout.WEST);
-        add(mainCenter, BorderLayout.CENTER);
+        add(NamePanel, BorderLayout.NORTH); //on met le NamePanel en haut
+        add(CommentPanel, BorderLayout.WEST); //on met le CommentPanel a gauche
+        add(DatePanel, BorderLayout.CENTER); //on met le Date Panel au centre
 
-        mainNorth.setBackground(Color.RED);
-        mainCenter.setBackground(Color.BLUE);
-        mainWest.setBackground(Color.BLACK);
+        //On met les couleurs
+        NamePanel.setBackground(Color.WHITE);
+        DatePanel.setBackground(Color.WHITE);
+        CommentPanel.setBackground(Color.WHITE);
 	}
 
 	public JPanel getPanneauPrincipalTask() //accesseur

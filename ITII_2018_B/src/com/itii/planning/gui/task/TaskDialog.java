@@ -1,6 +1,8 @@
 package com.itii.planning.gui.task;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
+
 import javax.swing.JDialog;
 
 public class TaskDialog extends JDialog //nouvelle fenetre pour création de tâche
@@ -27,6 +29,9 @@ public class TaskDialog extends JDialog //nouvelle fenetre pour création de tâch
         add(LeftBorder, BorderLayout.WEST); //gauche
         add(BotBorder, BorderLayout.SOUTH); //bas
         add(MainPanel, BorderLayout.CENTER); //centre
+        
+        //on set la couleur
+        setBackground(Color.WHITE);
        
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setVisible(true);

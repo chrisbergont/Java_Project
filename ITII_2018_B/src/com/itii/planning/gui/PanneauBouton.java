@@ -33,20 +33,20 @@ public class PanneauBouton extends JPanel implements ActionListener //classe du 
     public PanneauBouton() //constructeur
     {
     	setBackground(Color.white); //couleur de fond
-        this.add(spaceup);
+        add(spaceup);
         GridLayout grille = new GridLayout(15,1,0,10); //on lui crée une grille (nb lignes, nb colonnes, horizontal gap, vertical gap)
         setLayout(grille); //on integre la grille
         
         //on ajoute tout les bouutons et la date
-        this.add(space);
-        this.add(space1);
-        this.add(space2);
-        this.add(boutonCreer);
-        this.add(boutonEditer);
-        this.add(boutonMarquer);
-        this.add(new JButton("Dupliquer"));
-        this.add(new JButton("Supprimer"));
-        this.add(dateJour);
+        add(space);
+        add(space1);
+        add(space2);
+        add(boutonCreer);
+        add(boutonEditer);
+        add(boutonMarquer);
+        add(new JButton("Dupliquer"));
+        add(new JButton("Supprimer"));
+        add(dateJour);
         
         boutonCreer.addActionListener(this); //on écoute si y'a une action
     }

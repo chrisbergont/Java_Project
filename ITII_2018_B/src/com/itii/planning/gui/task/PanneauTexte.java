@@ -1,5 +1,6 @@
 package com.itii.planning.gui.task;
 
+import java.awt.Color;
 import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -29,6 +30,9 @@ public class PanneauTexte extends JPanel //nouvelle fenetre pour création de tâc
         add(space1);
         add(space2);
         add(labelDetails);
+        
+        //on set la couleur
+        setBackground(Color.WHITE);
     }
 
 	public JPanel getPanneauTexte() //accesseur

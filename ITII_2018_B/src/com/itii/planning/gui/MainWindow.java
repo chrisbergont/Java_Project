@@ -5,8 +5,6 @@ import javax.swing.JFrame;
 public class MainWindow extends JFrame { //class MainWindow qui est de type JFrame
 	
 	private static final long serialVersionUID = 1L;
-
-	private PMenuBar menuBar; //on déclare une barre de menu
 	
 	private MainWindow() //constructeur
 	{
@@ -19,11 +17,11 @@ public class MainWindow extends JFrame { //class MainWindow qui est de type JFra
 		setTitle("Mon Planning"); //titre du haut de page
 		setVisible(true); //on la met en visible
 		MainPanel myMainPanel = new MainPanel();
-		menuBar = new PMenuBar(); //on crée une barre de menu
+		PMenuBar menuBar = new PMenuBar(); //on crée une barre de menu
 		getContentPane().add(myMainPanel); //on met un Pannel
         setJMenuBar(PMenuBar.getMyMenuBar()); //on met ce qui va bien dans la barre 
-		this.validate();
-		this.repaint();
+		validate();
+		repaint();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE ); //si on clique sur la croix on quitte
 	}
 
