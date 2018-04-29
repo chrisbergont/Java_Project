@@ -18,7 +18,7 @@ public class PanneauListe extends PanneauTache //Quand on est en mode liste
 		JTable planningList = new JTable(tableModel); //on crée un tableau
 		
 		((DefaultTableModel) planningList.getModel()).addRow(new Object[] { //on ajoute une ligne au tableau
-				"Terminer le TP", "2018/05/05 20:20",
+				"Terminer le TP", "05/05/2018 20:20",
 				"Pour avoir une super note!" });
 		
 		planningList.setFillsViewportHeight(true);

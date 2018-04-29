@@ -20,7 +20,7 @@ public class PMenuBar extends JMenuBar //classe de la barre de Menu
     private JMenuItem quitter = new JMenuItem("Quitter");
     
     //edition
-    private JMenuItem creer = new JMenuItem("Creer");
+    private JMenuItem creer = new JMenuItem("Créer");
     private JMenuItem editer = new JMenuItem("Editer");
     private JMenuItem marquer = new JMenuItem("Marquer");
     private JMenuItem dupliquer = new JMenuItem("Dupliquer");

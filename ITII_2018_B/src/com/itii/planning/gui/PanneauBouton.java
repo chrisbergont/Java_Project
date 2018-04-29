@@ -22,7 +22,7 @@ public class PanneauBouton extends JPanel implements ActionListener //classe du 
 	
 	//on crée tout les boutons
     JLabel  spaceup = new JLabel (" "); //on fait un bouton vide pour laisser un espace en haut
-    JButton boutonCreer = new JButton("Creer");
+    JButton boutonCreer = new JButton("Créer");
     JButton boutonEditer = new JButton("Editer");
     JButton boutonMarquer = new JButton("Marquer");
     JButton boutonDupliquer = new JButton("Dupliquer");
