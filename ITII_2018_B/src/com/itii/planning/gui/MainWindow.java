@@ -3,6 +3,8 @@ package com.itii.planning.gui;
 import javax.swing.JFrame;
 
 public class MainWindow extends JFrame { //class MainWindow qui est de type JFrame
+	
+	private static final long serialVersionUID = 1L;
 
 	private PMenuBar menuBar; //on déclare une barre de menu
 	

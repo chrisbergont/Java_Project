@@ -5,6 +5,8 @@ import java.awt.*;
 
 public class MainPanel extends JPanel { //classe MainPanel dérivée d'un Jpanel
 
+	private static final long serialVersionUID = 1L;
+
 	public MainPanel() //constructeur
 	{
 		setBackground(Color.gray); //on met une couleur au fond

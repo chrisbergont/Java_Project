@@ -8,6 +8,8 @@ import javax.swing.JPanel;
 
 public class PanneauTop extends JPanel //panneau de barre du haut
 {
+	private static final long serialVersionUID = 1L;
+
 	private JComboBox comboBox= null;
 
 	//constructeur

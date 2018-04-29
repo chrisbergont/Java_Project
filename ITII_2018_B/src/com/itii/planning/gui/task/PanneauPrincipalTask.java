@@ -12,7 +12,9 @@ import org.jdatepicker.UtilDateModel;
 
 public class PanneauPrincipalTask extends JPanel //nouvelle fenetre pour création de tâche
 {
-	  public JDatePicker calendar = getCalendar(); //on déclare le JdatePicker
+	private static final long serialVersionUID = 1L;
+	
+	public JDatePicker calendar = getCalendar(); //on déclare le JdatePicker
 
     public JDatePicker getCalendar() //accesseur calendrier
     {

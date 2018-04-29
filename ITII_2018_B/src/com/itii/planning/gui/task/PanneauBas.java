@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 
 public class PanneauBas extends JPanel //nouvelle fenetre pour création de tâche
 {
+	private static final long serialVersionUID = 1L;
 
     public PanneauBas() //constructeur
     {

@@ -12,6 +12,7 @@ import com.itii.planning.gui.task.TaskDialog;
 
 public class PanneauBouton extends JPanel implements ActionListener //classe du panneau de droite avec les boutons
 {
+	private static final long serialVersionUID = 1L;
 	
 	//on crée tout les boutons
     JLabel  spaceup = new JLabel (" "); //on fait un bouton vide pour laisser un espace en haut

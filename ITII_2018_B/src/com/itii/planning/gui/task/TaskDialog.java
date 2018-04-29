@@ -5,7 +5,8 @@ import javax.swing.JDialog;
 
 public class TaskDialog extends JDialog //nouvelle fenetre pour création de tâche
 {
-
+	private static final long serialVersionUID = 1L;
+	
     public TaskDialog() //on crée la fenêtre
     {
         initialize();

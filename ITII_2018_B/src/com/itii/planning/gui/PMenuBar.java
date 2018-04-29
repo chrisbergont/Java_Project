@@ -8,6 +8,8 @@ import javax.swing.JMenuItem;
 
 public class PMenuBar extends JMenuBar //classe de la barre de Menu
 {
+	private static final long serialVersionUID = 1L;
+	
 	//on cree tous les objets necessaires pour construire les menu deroulants
     private JMenu fichier = new JMenu("Fichier");
     private JMenu edition = new JMenu("Edition");

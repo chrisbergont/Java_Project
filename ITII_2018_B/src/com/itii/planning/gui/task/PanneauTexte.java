@@ -6,7 +6,8 @@ import javax.swing.JPanel;
 
 public class PanneauTexte extends JPanel //nouvelle fenetre pour création de tâche
 {
-
+	private static final long serialVersionUID = 1L;
+	
     public PanneauTexte() //constructeur
     {
         // Ajout des Labels a gauche de la fenêtre
