@@ -9,12 +9,13 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 
-public class PanneauTop extends JPanel {
-
+public class PanneauTop extends JPanel 
+{
 	private JComboBox comboBox= null;
 
 	//constructeur
-	public PanneauTop(){
+	public PanneauTop()
+	{
 		String[] selectChoice = { "Liste", "Semaine", "Mois" };
 		this.setLayout(new BorderLayout());
 		GridBagConstraints gbc = new GridBagConstraints();
@@ -23,12 +24,10 @@ public class PanneauTop extends JPanel {
 		gbc.gridy = 0;
 		gbc.anchor = GridBagConstraints.FIRST_LINE_START;
 
-		
 		comboBox = new JComboBox(selectChoice);
 		JLabel label = new JLabel("Vue : ");
 		
 		add(label, BorderLayout.WEST);
 		this.add(comboBox, BorderLayout.CENTER);
 	}
-
 }

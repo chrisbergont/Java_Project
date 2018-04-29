@@ -15,22 +15,14 @@ import sun.security.jca.GetInstance.Instance;
 
 public class MainWindow extends JFrame {
 
-	//private static final String PanneauBouton = null;
-	//private MainPanel mainPanel;
-	//private MainPanel myPanel;
 	private PMenuBar menuBar;
-	//private PanneauBouton panneauBouton;
-	//private PComboBox comboBox;
-	
-	
-	private MainWindow() {
+	private MainWindow() 
+	{
 		initialize();
 	}
 
-
-	private void initialize() {
-		
-		
+	private void initialize() 
+	{
 		setSize(500, 500);
 		setTitle("Mon Planning");
 		setVisible(true);
@@ -45,12 +37,12 @@ public class MainWindow extends JFrame {
 
 	private static MainWindow instance;
 
-	public static MainWindow getInstance() {
-		if (instance == null) {
+	public static MainWindow getInstance() 
+	{
+		if (instance == null) 
+		{
 			instance = new MainWindow();
 		}
 		return instance;
 	}
-	
-
 }

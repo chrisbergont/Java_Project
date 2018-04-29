@@ -8,14 +8,13 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
-public class PMenuBar extends JMenuBar {
-
+public class PMenuBar extends JMenuBar 
+{
 	//on cree tous les objets necessaires pour construire les menu deroulants
     private JMenu fichier = new JMenu("Fichier");
     private JMenu edition = new JMenu("Edition");
     private JMenu vue = new JMenu("Vue");
     private JMenu help = new JMenu("?");
-    
     
     //fichier
     private JMenuItem quitter = new JMenuItem("Quitter");
@@ -73,5 +72,4 @@ public class PMenuBar extends JMenuBar {
 		
 		return new PMenuBar();
 	}
-
 }

@@ -4,8 +4,10 @@ import java.awt.Color;
 
 import javax.swing.JPanel;
 
-public class PanneauTache extends JPanel {
-	public PanneauTache() {
+public class PanneauTache extends JPanel 
+{
+	public PanneauTache() 
+	{
 		setBackground(Color.white);
         setVisible(true);
 	}

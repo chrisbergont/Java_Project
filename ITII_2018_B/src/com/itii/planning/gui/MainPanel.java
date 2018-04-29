@@ -7,10 +7,10 @@ import java.awt.*;
 public class MainPanel extends JPanel {
 
 
-	public MainPanel() {
+	public MainPanel() 
+	{
 		setBackground(Color.gray);
 		// setVisible(true);
-		// mainPanel = new JPanel();
 
 		this.setLayout(new BorderLayout());
 

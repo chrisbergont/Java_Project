@@ -5,12 +5,14 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-public class PanneauListe extends PanneauTache {
+public class PanneauListe extends PanneauTache 
+{
 	// constructeur
-	public PanneauListe() {
+	public PanneauListe() 
+	{
 		this.setLayout(new BorderLayout());
 
-		String title[] = { "Nom de la t√¢che", "Date d√ªe", "D√©tails" };
+		String title[] = { "Nom de la t‚che", "Date d‚te", "DÈtails" };
 
 		DefaultTableModel tableModel = new DefaultTableModel(title, 0);
 		JTable planningList = new JTable(tableModel);
@@ -21,6 +23,5 @@ public class PanneauListe extends PanneauTache {
 		
 		JScrollPane scp = new JScrollPane(planningList);
 		this.add(scp, BorderLayout.CENTER);
-
 	}
 }
