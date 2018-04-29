@@ -1,17 +1,6 @@
 package com.itii.planning.gui;
 
-import java.awt.BorderLayout;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.GridLayout;
-import java.awt.Dimension;
-
-import javax.swing.JLabel;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
-import javax.swing.JMenuBar;
-import javax.swing.JPanel;
-import sun.security.jca.GetInstance.Instance;
 
 public class MainWindow extends JFrame { //class MainWindow qui est de type JFrame
 

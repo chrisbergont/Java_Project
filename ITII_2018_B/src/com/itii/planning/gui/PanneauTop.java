@@ -1,13 +1,10 @@
 package com.itii.planning.gui;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.GridBagConstraints;
-
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.border.Border;
 
 public class PanneauTop extends JPanel //panneau de barre du haut
 {

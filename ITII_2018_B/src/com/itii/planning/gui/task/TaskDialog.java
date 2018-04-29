@@ -1,18 +1,7 @@
 package com.itii.planning.gui.task;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.GridLayout;
-import java.util.Calendar;
-
-import javax.swing.JButton;
 import javax.swing.JDialog;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-
-import org.jdatepicker.JDatePicker;
-import org.jdatepicker.UtilDateModel;
 
 public class TaskDialog extends JDialog //nouvelle fenetre pour création de tâche
 {

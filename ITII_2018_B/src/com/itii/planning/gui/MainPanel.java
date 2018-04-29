@@ -1,7 +1,6 @@
 package com.itii.planning.gui;
 
 import javax.swing.*;
-
 import java.awt.*;
 
 public class MainPanel extends JPanel { //classe MainPanel dérivée d'un Jpanel

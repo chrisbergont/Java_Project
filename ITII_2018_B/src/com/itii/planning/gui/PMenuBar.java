@@ -1,7 +1,5 @@
 package com.itii.planning.gui;
 
-import java.awt.Dimension;
-
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JMenu;

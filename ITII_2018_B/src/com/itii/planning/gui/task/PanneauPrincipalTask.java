@@ -4,19 +4,11 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.util.Calendar;
-
-import javax.swing.JButton;
-import javax.swing.JDialog;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-
 import org.jdatepicker.JDatePicker;
 import org.jdatepicker.UtilDateModel;
 
-import com.itii.planning.gui.PanneauBouton;
-import com.itii.planning.gui.PanneauListe;
-import com.itii.planning.gui.PanneauTop;
 
 public class PanneauPrincipalTask extends JPanel //nouvelle fenetre pour création de tâche
 {
