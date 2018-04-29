@@ -8,7 +8,7 @@ public class PanneauTache extends JPanel
 {
 	public PanneauTache() 
 	{
-		setBackground(Color.white);
-        setVisible(true);
+		setBackground(Color.white); //couleur du fond
+        setVisible(true); //on la met visible
 	}
 }

@@ -4,28 +4,29 @@ import javax.swing.*;
 
 import java.awt.*;
 
-public class MainPanel extends JPanel {
+public class MainPanel extends JPanel { //classe MainPanel dérivée d'un Jpanel
 
-
-	public MainPanel() 
+	public MainPanel() //
 	{
-		setBackground(Color.gray);
+		setBackground(Color.gray); //on met une couleur au fond
 		// setVisible(true);
 
-		this.setLayout(new BorderLayout());
+		this.setLayout(new BorderLayout()); //on crée un borderLayout
 
-		// creation
+		// creation des 3 pannels
 		PanneauTop pTop = new PanneauTop();
 		PanneauListe pListe = new PanneauListe();
 		PanneauBouton pBtn = new PanneauBouton();
 
+		// positionnement des 3 pannels dans le borderLayout
 		add(pTop, BorderLayout.NORTH);
 		add(pListe, BorderLayout.CENTER);
 		add(pBtn, BorderLayout.EAST);
 
 	}
 
-	public JPanel getMainPanel() {
+	public JPanel getMainPanel() //accesseur
+	{ 
 		return this;
 	}
 }

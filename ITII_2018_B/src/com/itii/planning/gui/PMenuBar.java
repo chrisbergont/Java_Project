@@ -8,7 +8,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
-public class PMenuBar extends JMenuBar 
+public class PMenuBar extends JMenuBar //classe de la barre de Menu
 {
 	//on cree tous les objets necessaires pour construire les menu deroulants
     private JMenu fichier = new JMenu("Fichier");
@@ -66,9 +66,11 @@ public class PMenuBar extends JMenuBar
     }
     
 	private JComboBox combo = new JComboBox();
+	
 	private JLabel label = new JLabel("Liste");
 
-	public static PMenuBar getMyMenuBar(){
+	public static PMenuBar getMyMenuBar() //accesseur Barre de menu
+	{
 		
 		return new PMenuBar();
 	}
