@@ -11,7 +11,7 @@ public class MainPanel extends JPanel{ // classe MainPanel dérivée d'un Jpanel
 	public MainPanel() // constructeur
 	{
 		setBackground(Color.gray); // on met une couleur au fond
-		// setVisible(true);
+		//setVisible(true);
 
 		setLayout(new BorderLayout()); // on crée un borderLayout
 

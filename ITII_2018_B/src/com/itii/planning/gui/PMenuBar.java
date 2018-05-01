@@ -10,6 +10,8 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
 import com.itii.planning.gui.task.TaskDialog;
+import com.itii.planning.gui.version.WindowVersion;
+import com.itii.planning.gui.aide.WindowAide;
 
 public class PMenuBar extends JMenuBar implements ActionListener // classe de la barre de Menu
 {
@@ -68,6 +70,8 @@ public class PMenuBar extends JMenuBar implements ActionListener // classe de la
 		
 		creer.addActionListener(this); // on écoute si y'a une action
 		quitter.addActionListener(this); // on écoute si y'a une action
+		aide.addActionListener(this); // on écoute si y'a une action
+		version.addActionListener(this); // on écoute si y'a une action	
 	}
 
 
@@ -84,6 +88,12 @@ public class PMenuBar extends JMenuBar implements ActionListener // classe de la
 	    } 
 	    if (b == quitter) {
 	    	MainWindow.getInstance().dispose();  // on ferme la Jrame si bouton c'est le bouton quitter
+	    }
+	    if (b == aide) {
+	    	WindowAide aide = new WindowAide(); //on ouvre une fênetre avec les instructions d'aide
+	    }
+	    if (b == version) {
+	    	WindowVersion version = new WindowVersion(); //on ouvre une fenetre d'information sur le numero de version
 	    }
 		
 	}

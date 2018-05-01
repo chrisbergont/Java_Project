@@ -16,6 +16,7 @@ public class MainWindow extends JFrame { // class MainWindow qui est de type JFr
 		setSize(500, 500); // taille
 		setTitle("Mon Planning"); // titre du haut de page
 		setVisible(true); // on la met en visible
+		setLocationRelativeTo(null); //On centre la fenêtre sur l'écran
 		//MainPanel myMainPanel = new MainPanel();
 		//PMenuBar menuBar = new PMenuBar(); // on crée une barre de menu
 		getContentPane().add(myMainPanel); // on met un Pannel

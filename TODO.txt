@@ -1,7 +1,5 @@
 Reste à faire avant le prochain cours :
 - Gestion du bouton "Annulé" dans l'ajout d'une tâche
-- Gestion du bouton "Aide" dans la barre sous "?"
-- Gestion du bouton "Version" dans la barre sous "?"
 - Gestion du bouton Duppliquer la tâche
 - Gestion du bouton Supprimer la tâche
 - Gestion du bouton Marquer la tâche
@@ -12,3 +10,8 @@ Reste à faire avant le prochain cours :
 
 Travail fait : 
 - Gestion du bouton "Quitter" dans la barre sous "Fichier"
+- Gestion du bouton "Aide" dans la barre sous "?"
+- Gestion du bouton "Version" dans la barre sous "?"
+
+A demander au prof :
+- warnings dûs a un problème d'UID 
