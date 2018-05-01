@@ -49,6 +49,7 @@ public class PanneauBouton extends JPanel implements ActionListener // classe du
 		add(dateJour);
 
 		boutonCreer.addActionListener(this); // on écoute si y'a une action
+		
 	}
 
 	public void actionPerformed(ActionEvent e) // si on a cliqué sur boutonCreer

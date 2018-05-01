@@ -5,7 +5,7 @@ import javax.swing.JFrame;
 public class MainWindow extends JFrame { // class MainWindow qui est de type JFrame
 
 	private static final long serialVersionUID = 1L;
-
+	public MainPanel myMainPanel = new MainPanel();
 	private MainWindow() // constructeur
 	{
 		initialize();
@@ -16,8 +16,8 @@ public class MainWindow extends JFrame { // class MainWindow qui est de type JFr
 		setSize(500, 500); // taille
 		setTitle("Mon Planning"); // titre du haut de page
 		setVisible(true); // on la met en visible
-		MainPanel myMainPanel = new MainPanel();
-		PMenuBar menuBar = new PMenuBar(); // on crée une barre de menu
+		//MainPanel myMainPanel = new MainPanel();
+		//PMenuBar menuBar = new PMenuBar(); // on crée une barre de menu
 		getContentPane().add(myMainPanel); // on met un Pannel
 		setJMenuBar(PMenuBar.getMyMenuBar()); // on met ce qui va bien dans la barre
 		validate();

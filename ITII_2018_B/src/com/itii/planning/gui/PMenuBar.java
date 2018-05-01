@@ -1,12 +1,17 @@
 package com.itii.planning.gui;
 
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+//import javax.swing.JComboBox;
+//import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
-public class PMenuBar extends JMenuBar // classe de la barre de Menu
+import com.itii.planning.gui.task.TaskDialog;
+
+public class PMenuBar extends JMenuBar implements ActionListener // classe de la barre de Menu
 {
 	private static final long serialVersionUID = 1L;
 
@@ -60,14 +65,26 @@ public class PMenuBar extends JMenuBar // classe de la barre de Menu
 		// ajout des objets qui appartiennent a l objet aide
 		help.add(aide);
 		help.add(version);
+		
+		creer.addActionListener(this); // on écoute si y'a une action
+		quitter.addActionListener(this); // on écoute si y'a une action
 	}
 
-	private JComboBox<?> combo = new JComboBox<Object>();
-
-	private JLabel label = new JLabel("Liste");
 
 	public static PMenuBar getMyMenuBar() // accesseur Barre de menu
 	{
 		return new PMenuBar();
+	}
+	
+	public void actionPerformed(ActionEvent e) // si on a cliqué sur boutonCreer
+	{	
+		JMenuItem b = (JMenuItem ) e.getSource();	// on regarde quel bouton a été appuyé
+	    if (b == creer) {
+	    	TaskDialog creation = new TaskDialog(); // on ouvre une TaskDialog si bouton c'est le bouton créer
+	    } 
+	    if (b == quitter) {
+	    	MainWindow.getInstance().dispose();  // on ferme la Jrame si bouton c'est le bouton quitter
+	    }
+		
 	}
 }

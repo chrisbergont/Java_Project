@@ -25,5 +25,8 @@ public class PanneauListe extends PanneauTache // Quand on est en mode liste
 
 		JScrollPane scp = new JScrollPane(planningList); // on crée un JscrollPane si ca dépasse
 		add(scp, BorderLayout.CENTER); // on l'ajoute
+		
+		
 	}
+	
 }

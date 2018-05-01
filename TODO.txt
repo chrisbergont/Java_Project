@@ -1,8 +1,11 @@
 Reste à faire avant le prochain cours :
 - Gestion du bouton "Annulé" dans l'ajout d'une tâche
-- Gestion du bouton "Quitter" dans la barre sous "Fichier"
 - Gestion du bouton "Aide" dans la barre sous "?"
 - Gestion du bouton "Version" dans la barre sous "?"
 - Gestion de la vue Semaine
 - Gestion de la vue Mois
 - Création de la BDD (Chris s'en occupe si le prof envoie le sujet)
+
+
+Travail fait : 
+- Gestion du bouton "Quitter" dans la barre sous "Fichier"
