@@ -7,7 +7,6 @@ Reste à faire avant le prochain cours :
 - Gestion de la vue Semaine
 - Gestion de la vue Mois
 - Sujet TP
-- Herizo corrige les bugd que t'as mis stp ^^
 
 Travail fait : 
 - Gestion du bouton "Quitter" dans la barre sous "Fichier"

@@ -1,11 +1,5 @@
 package com.itii.planning.gui;
 
-import java.awt.BorderLayout;
-
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
-
 public class PanneauMois extends PanneauTache {
 	private static final long serialVersionUID = 1L;
 
@@ -13,7 +7,8 @@ public class PanneauMois extends PanneauTache {
 	public PanneauMois() {
 		
 		/////BROUILON HERIZO : pour différencier les panneaux
-		setLayout(new BorderLayout()); // on est en mode BorderLayout
+		
+		/*setLayout(new BorderLayout()); // on est en mode BorderLayout
 
 		String title[] = { "MOIS", "MOIS", "Détails" }; // on a une liste de string
 
@@ -27,7 +22,7 @@ public class PanneauMois extends PanneauTache {
 
 		JScrollPane scp = new JScrollPane(planningList); // on crée un JscrollPane si ca dépasse
 		add(scp, BorderLayout.CENTER); // on l'ajoute
-		
+		*/
 			
 	}
 }

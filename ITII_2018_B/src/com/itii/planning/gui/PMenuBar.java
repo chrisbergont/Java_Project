@@ -9,6 +9,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
+import com.itii.planning.gui.task.PanneauPrincipalTask;
 import com.itii.planning.gui.task.TaskDialog;
 import com.itii.planning.gui.version.WindowVersion;
 import com.itii.planning.gui.aide.WindowAide;
