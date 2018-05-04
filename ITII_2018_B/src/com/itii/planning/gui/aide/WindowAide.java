@@ -3,22 +3,22 @@ package com.itii.planning.gui.aide;
 import java.awt.Color;
 import java.awt.FlowLayout;
 
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import javax.swing.JLabel;
  
-public class WindowAide extends JFrame{
+public class WindowAide extends JDialog{
  
 	private static final long serialVersionUID = 1L;
  
 	public WindowAide(){
 		setVisible(true); // on la met en visible
-		setTitle("Aide"); //On donne un titre à l'application
-		setLocationRelativeTo(null); //On centre la fenêtre sur l'écran
-		setSize(400,200); //On donne une taille à notre fenêtre
-		setResizable(false); //On interdit la redimensionnement de la fenêtre
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //On dit à l'application de se fermer lors du clic sur la croix
+		setTitle("Aide"); //On donne un titre ï¿½ l'application
+		setLocationRelativeTo(null); //On centre la fenï¿½tre sur l'ï¿½cran
+		setSize(400,200); //On donne une taille ï¿½ notre fenï¿½tre
+		setResizable(false); //On interdit la redimensionnement de la fenï¿½tre
 		setContentPane(buildContentPane());
 	}
  

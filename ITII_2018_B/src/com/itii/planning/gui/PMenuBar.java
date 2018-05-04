@@ -28,7 +28,7 @@ public class PMenuBar extends JMenuBar implements ActionListener // classe de la
 	private JMenuItem quitter = new JMenuItem("Quitter");
 
 	// edition
-	private JMenuItem creer = new JMenuItem("Créer");
+	private JMenuItem creer = new JMenuItem("Creer");
 	private JMenuItem editer = new JMenuItem("Editer");
 	private JMenuItem marquer = new JMenuItem("Marquer");
 	private JMenuItem dupliquer = new JMenuItem("Dupliquer");
@@ -69,10 +69,10 @@ public class PMenuBar extends JMenuBar implements ActionListener // classe de la
 		help.add(aide);
 		help.add(version);
 		
-		creer.addActionListener(this); // on écoute si y'a une action
-		quitter.addActionListener(this); // on écoute si y'a une action
-		aide.addActionListener(this); // on écoute si y'a une action
-		version.addActionListener(this); // on écoute si y'a une action	
+		creer.addActionListener(this); // on ï¿½coute si y'a une action
+		quitter.addActionListener(this); // on ï¿½coute si y'a une action
+		aide.addActionListener(this); // on ï¿½coute si y'a une action
+		version.addActionListener(this); // on ï¿½coute si y'a une action	
 	}
 
 
@@ -81,17 +81,17 @@ public class PMenuBar extends JMenuBar implements ActionListener // classe de la
 		return new PMenuBar();
 	}
 	
-	public void actionPerformed(ActionEvent e) // si on a cliqué sur boutonCreer
+	public void actionPerformed(ActionEvent e) // si on a cliquï¿½ sur boutonCreer
 	{	
-		JMenuItem b = (JMenuItem ) e.getSource();	// on regarde quel bouton a été appuyé
+		JMenuItem b = (JMenuItem ) e.getSource();	// on regarde quel bouton a ï¿½tï¿½ appuyï¿½
 	    if (b == creer) {
-	    	TaskDialog creation = new TaskDialog(); // on ouvre une TaskDialog si bouton c'est le bouton créer
+	    	TaskDialog creation = new TaskDialog(); // on ouvre une TaskDialog si bouton c'est le bouton crï¿½er
 	    } 
-	    if (b == quitter) {
+	    if (b == quitter) { 
 	    	MainWindow.getInstance().dispose();  // on ferme la Jrame si bouton c'est le bouton quitter
 	    }
 	    if (b == aide) {
-	    	WindowAide aide = new WindowAide(); //on ouvre une fênetre avec les instructions d'aide
+	    	WindowAide aide = new WindowAide(); //on ouvre une fï¿½netre avec les instructions d'aide
 	    }
 	    if (b == version) {
 	    	WindowVersion version = new WindowVersion(); //on ouvre une fenetre d'information sur le numero de version

@@ -5,21 +5,21 @@ import java.awt.GridLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class PanneauTexte extends JPanel // nouvelle fenetre pour création de tâche
+public class PanneauTexte extends JPanel // nouvelle fenetre pour crï¿½ation de tï¿½che
 {
 	private static final long serialVersionUID = 1L;
 
 	public PanneauTexte() // constructeur
 	{
-		// Ajout des Labels a gauche de la fenêtre
-		GridLayout grilleName = new GridLayout(8, 1, 0, 10); // on lui crée une grille (nb lignes, nb colonnes,
+		// Ajout des Labels a gauche de la fenï¿½tre
+		GridLayout grilleName = new GridLayout(8, 1, 0, 10); // on lui crï¿½e une grille (nb lignes, nb colonnes,
 																// horizontal gap, vertical gap)
 		setLayout(grilleName); // on met la grille
 
-		// On crée tout les labels
-		JLabel labelTask = new JLabel("Nom de la tâche : ");
-		JLabel labelDate = new JLabel("Date dûe : ");
-		JLabel labelDetails = new JLabel("Détails : ");
+		// On crï¿½e tout les labels
+		JLabel labelTask = new JLabel("Nom de la tache : ");
+		JLabel labelDate = new JLabel("Date due : ");
+		JLabel labelDetails = new JLabel("Details : ");
 		JLabel space = new JLabel(" ");
 		JLabel space1 = new JLabel(" ");
 		JLabel space2 = new JLabel(" ");

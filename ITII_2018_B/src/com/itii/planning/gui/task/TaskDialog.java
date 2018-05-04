@@ -2,14 +2,20 @@ package com.itii.planning.gui.task;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JDialog;
 
-public class TaskDialog extends JDialog // nouvelle fenetre pour création de tâche
+public class TaskDialog extends JDialog implements ActionListener // nouvelle fenetre pour crï¿½ation de tï¿½che
 {
 	private static final long serialVersionUID = 1L;
+	PanneauTexte LeftBorder = new PanneauTexte(); // on dï¿½clare le panneau de gaucge avec le text
+	PanneauBas BotBorder = new PanneauBas(this); // on dï¿½clare le panneau du bas avec les boutons
+	PanneauPrincipalTask MainPanel = new PanneauPrincipalTask(); // On dï¿½clare le panneau central
 
-	public TaskDialog() // on crée la fenêtre
+	public TaskDialog() // on crï¿½e la fenï¿½tre
 	{
 		initialize();
 	}
@@ -19,9 +25,7 @@ public class TaskDialog extends JDialog // nouvelle fenetre pour création de tâc
 		setVisible(true); // visible
 		setTitle("Ajout d'une date"); // titre
 
-		PanneauTexte LeftBorder = new PanneauTexte(); // on déclare le panneau de gaucge avec le text
-		PanneauBas BotBorder = new PanneauBas(); // on déclare le panneau du bas avec les boutons
-		PanneauPrincipalTask MainPanel = new PanneauPrincipalTask(); // On déclare le panneau central
+		
 
 		// on positionne les panels
 		setLayout(new BorderLayout()); // on positionne en BorderLayout
@@ -36,5 +40,16 @@ public class TaskDialog extends JDialog // nouvelle fenetre pour création de tâc
 		setVisible(true);
 		validate();
 		repaint();
+	}
+	public void actionPerformed(ActionEvent e) // si on a cliquï¿½ sur boutonCreer
+	{	
+		JButton b = (JButton ) e.getSource();	// on regarde quel bouton a ï¿½tï¿½ appuyï¿½
+	    if (b == BotBorder.Annuler) {
+	    	this.dispose();  // on ferme la TaskDialog si bouton Annuler appuyer
+	    }
+	    if(b == BotBorder.OK){
+	    	String tache = MainPanel.getLabel();
+	    	System.out.println(tache);
+	    }
 	}
 }

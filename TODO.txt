@@ -12,6 +12,7 @@ Travail fait :
 - Gestion du bouton "Quitter" dans la barre sous "Fichier"
 - Gestion du bouton "Aide" dans la barre sous "?"
 - Gestion du bouton "Version" dans la barre sous "?"
+- gestion erreur quand on ferme l'aide
 
 A demander au prof :
 - warnings dûs a un problème d'UID 
