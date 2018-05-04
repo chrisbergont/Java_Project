@@ -11,12 +11,12 @@ public class MainWindow extends JFrame { // class MainWindow qui est de type JFr
 		initialize();
 	}
 
-	private void initialize() // Fonction appelée part le constructeur
+	private void initialize() // Fonction appelï¿½e part le constructeur
 	{
 		setSize(500, 500); // taille
 		setTitle("Mon Planning"); // titre du haut de page
 		setVisible(true); // on la met en visible
-		setLocationRelativeTo(null); //On centre la fenêtre sur l'écran
+		setLocationRelativeTo(null); //On centre la fenï¿½tre sur l'ï¿½cran
 		getContentPane().add(myMainPanel); // on met un Pannel
 		setJMenuBar(PMenuBar.getMyMenuBar()); // on met ce qui va bien dans la barre
 		validate();
@@ -32,5 +32,8 @@ public class MainWindow extends JFrame { // class MainWindow qui est de type JFr
 			instance = new MainWindow();
 		}
 		return instance;
+	}
+	public MainPanel getMyMainPanel() {
+		return myMainPanel;
 	}
 }

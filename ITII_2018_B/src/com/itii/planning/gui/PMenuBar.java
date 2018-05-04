@@ -2,9 +2,6 @@ package com.itii.planning.gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-//import javax.swing.JComboBox;
-//import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -85,7 +82,7 @@ public class PMenuBar extends JMenuBar implements ActionListener // classe de la
 	{	
 		JMenuItem b = (JMenuItem ) e.getSource();	// on regarde quel bouton a �t� appuy�
 	    if (b == creer) {
-	    	TaskDialog creation = new TaskDialog(); // on ouvre une TaskDialog si bouton c'est le bouton cr�er
+	    	TaskDialog creation = new TaskDialog( MainWindow.getInstance().getMyMainPanel().getpListe()); // on ouvre une TaskDialog si bouton c'est le bouton cr�er
 	    } 
 	    if (b == quitter) { 
 	    	MainWindow.getInstance().dispose();  // on ferme la Jrame si bouton c'est le bouton quitter

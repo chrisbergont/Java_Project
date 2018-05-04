@@ -8,7 +8,8 @@ import javax.swing.table.DefaultTableModel;
 public class PanneauListe extends PanneauTache // Quand on est en mode liste
 {
 	private static final long serialVersionUID = 1L;
-
+	JTable planningList;
+	
 	// constructeur
 	public PanneauListe() {
 		setLayout(new BorderLayout()); // on est en mode BorderLayout
@@ -16,17 +17,29 @@ public class PanneauListe extends PanneauTache // Quand on est en mode liste
 		String title[] = { "Nom de la tache", "Date", "Details" }; // on a une liste de string
 
 		DefaultTableModel tableModel = new DefaultTableModel(title, 0); // on d�clare un tableau qvec lq liste comme nom
-		JTable planningList = new JTable(tableModel); // on cr�e un tableau
-
-		((DefaultTableModel) planningList.getModel()).addRow(new Object[] { // on ajoute une ligne au tableau
-				"Terminer le TP", "05/05/2018 20:20", "Pour avoir une super note!" });
+		planningList = new JTable(tableModel); // on cr�e un tableau
 
 		planningList.setFillsViewportHeight(true);
 
 		JScrollPane scp = new JScrollPane(planningList); // on cr�e un JscrollPane si ca d�passe
 		add(scp, BorderLayout.CENTER); // on l'ajoute
-		
-		
 	}
 	
+	
+	public void addTask(String tache){
+		String[] task;
+		task = tache.split(";");
+		System.out.println(tache);
+		((DefaultTableModel) planningList.getModel()).addRow(new Object[] { // on ajoute une ligne au tableau
+				task[0], task[1], task[2] });
+
+	}
+	
+	public void removeTask(int romNumber){
+		((DefaultTableModel) planningList.getModel()).removeRow(romNumber); // on supprime une ligne au tableau
+	}
+	
+	public JTable getPlanningList() {
+		return planningList;
+	}
 }
