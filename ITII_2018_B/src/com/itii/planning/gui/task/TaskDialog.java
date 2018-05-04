@@ -56,7 +56,8 @@ public class TaskDialog extends JDialog implements ActionListener // nouvelle fe
 	    }
 	    if(b == BotBorder.OK){
 	    	tache = MainPanel.getLabel();
-	    	if(!(tache == "")){
+	    	System.out.println(tache=="");
+	    	if(!";;".equals(tache)){
 	    		pl.addTask(tache);
 	    	}
 	    	this.dispose();

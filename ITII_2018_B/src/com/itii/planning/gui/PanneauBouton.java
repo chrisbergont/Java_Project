@@ -60,7 +60,7 @@ public class PanneauBouton extends JPanel implements ActionListener // classe du
 		JButton b = (JButton ) e.getSource();	// on regarde quel bouton a �t� appuy�
 	    if (b == boutonCreer) {
 	    	System.out.println("btn creer cliquer");
-	    	TaskDialog creation = new TaskDialog(MainWindow.getInstance().getMyMainPanel().getpListe()); // on ouvre une TaskDialog
+	    	new TaskDialog(MainWindow.getInstance().getMyMainPanel().getpListe()); // on ouvre une TaskDialog
 	    }
 	    if(b == boutonEditer){
 	    	System.out.println("btn editer cliquer");

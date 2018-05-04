@@ -13,7 +13,7 @@ public class PanneauPrincipalTask extends JPanel // nouvelle fenetre pour cr�a
 {
 	private static final long serialVersionUID = 1L;
 	private JTextField nameBox = new JTextField(40); // On cr�e une zone de text
-	private JTextField dateBox = new JTextField(20);
+	//private JTextField dateBox = new JTextField(20);
 	private JTextField commentBox = new JTextField(240);
 	
 	public JDatePicker calendar = getCalendar(); // on d�clare le JdatePicker
@@ -39,16 +39,16 @@ public class PanneauPrincipalTask extends JPanel // nouvelle fenetre pour cr�a
 
 		// Idem pour le DatePanel
 		JPanel DatePanel = new JPanel();
-		dateBox.setSize(20, 20); // on met une taille
+		//dateBox.setSize(20, 20); // on met une taille
 		DatePanel.add(calendar); // on ajoute en plus le calendrier
-		dateBox.setColumns(23);
+		//dateBox.setColumns(23);
 
 		// Idem pour le CommentPanel
 		JPanel CommentPanel = new JPanel();
 		commentBox.setSize(20, 40);
-		CommentPanel.add(dateBox);
+		//CommentPanel.add(dateBox);
 		CommentPanel.add(commentBox);
-		commentBox.setColumns(23);
+		//commentBox.setColumns(23);
 
 		GridLayout grille = new GridLayout(2, 0, 10, 10); // on lui cr�e une grille (nb lignes, nb colonnes, horizontal
 															// gap, vertical gap)
@@ -57,7 +57,7 @@ public class PanneauPrincipalTask extends JPanel // nouvelle fenetre pour cr�a
 		// on dispose les panels en border layout
 		setLayout(new BorderLayout());
 		add(NamePanel, BorderLayout.NORTH); // on met le NamePanel en haut
-		add(CommentPanel, BorderLayout.WEST); // on met le CommentPanel a gauche
+		add(CommentPanel, BorderLayout.SOUTH); // on met le CommentPanel a gauche
 		add(DatePanel, BorderLayout.CENTER); // on met le Date Panel au centre
 
 		// On met les couleurs
@@ -68,7 +68,7 @@ public class PanneauPrincipalTask extends JPanel // nouvelle fenetre pour cr�a
 	
 	public String getLabel(){
 		String tache = "";
-		tache = nameBox.getText() + ";" + commentBox.getText() + ";" + dateBox.getText() ;
+		tache = nameBox.getText() + ";" + getCalendar().getFormattedTextField().getText() + ";" + commentBox.getText();
 		return tache;
 	}
 
