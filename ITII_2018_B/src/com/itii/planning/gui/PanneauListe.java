@@ -1,5 +1,7 @@
 package com.itii.planning.gui;
 
+import com.itii.db.Database;
+
 import java.awt.BorderLayout;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -21,8 +23,13 @@ public class PanneauListe extends PanneauTache // Quand on est en mode liste
 
 		planningList.setFillsViewportHeight(true);
 
+		for(String t : Database.getAllTasks())//On charger la BDD
+		{
+			addTaskInView(t);
+		}
+
 		JScrollPane scp = new JScrollPane(planningList); // on cr�e un JscrollPane si ca d�passe
-		add(scp, BorderLayout.CENTER); // on l'ajoute
+		add(scp, BorderLayout.CENTER);// on l'ajoute
 	}
 	
 	
@@ -30,6 +37,14 @@ public class PanneauListe extends PanneauTache // Quand on est en mode liste
 		String[] task;
 		task = tache.split(";");
 		System.out.println(tache);
+		addTaskInView(tache);
+		Database.addTask(task[0],task[1],task[2],false);
+
+	}
+
+	public void addTaskInView(String tache){
+		String[] task;
+		task = tache.split(";");
 		((DefaultTableModel) planningList.getModel()).addRow(new Object[] { // on ajoute une ligne au tableau
 				task[0], task[1], task[2] });
 

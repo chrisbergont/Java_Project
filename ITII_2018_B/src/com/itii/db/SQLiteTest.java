@@ -28,7 +28,7 @@ public class SQLiteTest {
 		try
 		{
 			// Chargement du Driver. Stockage des données dans le fichier planning.db
-			connection = DriverManager .getConnection("jdbc:sqlite:database/planning.db");
+			connection = DriverManager .getConnection("jdbc:sqlite:ITII_2018_B/database/planning.db");
 			// Objet permettant l'exécution des requêtes SQL
 			statement = connection.createStatement();
 			// Timeout en cas de non-réponse de la base de données. statement.setQueryTimeout(15);
@@ -70,7 +70,11 @@ public class SQLiteTest {
 				ResultSet rs = statement.executeQuery("select * from " + TABLE_NAME); while (rs.next())
 				{
 					System.out.print("lecture d'une donnée [");
-					System.out.print(" id = " + rs.getString(FIELD_ID)); System.out.print(" ; name = " + rs.getString(FIELD_NAME)); System.out.print(" ; date = " + rs.getString(FIELD_DATE)); System.out.print(" ; details = " + rs.getString(FIELD_DETAILS)); System.out.println( " ; etat = " + rs.getString(FIELD_STATE) + "]");
+					System.out.print(" id = " + rs.getString(FIELD_ID));
+					System.out.print(" ; name = " + rs.getString(FIELD_NAME));
+					System.out.print(" ; date = " + rs.getString(FIELD_DATE));
+					System.out.print(" ; details = " + rs.getString(FIELD_DETAILS));
+					System.out.println( " ; etat = " + rs.getString(FIELD_STATE) + "]");
 				}
 			} catch (SQLException e)
 			{
