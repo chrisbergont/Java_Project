@@ -12,9 +12,9 @@ import org.jdatepicker.UtilDateModel;
 public class PanneauPrincipalTask extends JPanel // nouvelle fenetre pour cr�ation de t�che
 {
 	private static final long serialVersionUID = 1L;
-	private JTextField nameBox = new JTextField(40); // On cr�e une zone de text
+	public JTextField nameBox = new JTextField(40); // On cr�e une zone de text
 	//private JTextField dateBox = new JTextField(20);
-	private JTextField commentBox = new JTextField(240);
+	public JTextField commentBox = new JTextField(240);
 	
 	public JDatePicker calendar = getCalendar(); // on d�clare le JdatePicker
 

@@ -5,10 +5,11 @@ import java.awt.event.ActionListener;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.table.DefaultTableModel;
 
-import com.itii.planning.gui.task.PanneauPrincipalTask;
 import com.itii.planning.gui.task.TaskDialog;
 import com.itii.planning.gui.version.WindowVersion;
+import com.itii.db.Database;
 import com.itii.planning.gui.aide.WindowAide;
 
 public class PMenuBar extends JMenuBar implements ActionListener // classe de la barre de Menu
@@ -67,6 +68,10 @@ public class PMenuBar extends JMenuBar implements ActionListener // classe de la
 		help.add(version);
 		
 		creer.addActionListener(this); // on �coute si y'a une action
+		editer.addActionListener(this); // on �coute si y'a une action
+		marquer.addActionListener(this); // on �coute si y'a une action
+		dupliquer.addActionListener(this); // on �coute si y'a une action
+		supprimer.addActionListener(this); // on �coute si y'a une action
 		quitter.addActionListener(this); // on �coute si y'a une action
 		aide.addActionListener(this); // on �coute si y'a une action
 		version.addActionListener(this); // on �coute si y'a une action	
@@ -82,7 +87,58 @@ public class PMenuBar extends JMenuBar implements ActionListener // classe de la
 	{	
 		JMenuItem b = (JMenuItem ) e.getSource();	// on regarde quel bouton a �t� appuy�
 	    if (b == creer) {
-	    	TaskDialog creation = new TaskDialog( MainWindow.getInstance().getMyMainPanel().getpListe()); // on ouvre une TaskDialog si bouton c'est le bouton cr�er
+	    	System.out.println("btn creer clique");
+	    	new TaskDialog(MainWindow.getInstance().getMyMainPanel().getpListe()); // on ouvre une TaskDialog	    
+	    } 
+	    if (b == editer) {
+	    	System.out.println("btn editer clique");
+	    	
+	    	int[] selection = PanneauListe.planningList.getSelectedRows();
+            TaskDialog dialog = new TaskDialog(MainWindow.getInstance().getMyMainPanel().getpListe());
+            dialog.MainPanel.nameBox.setText((String) PanneauListe.planningList.getValueAt(selection[0], 0));
+            dialog.MainPanel.calendar.setToolTipText((String) PanneauListe.planningList.getValueAt(selection[0], 1));
+            dialog.MainPanel.commentBox.setText((String) PanneauListe.planningList.getValueAt(selection[0], 2));
+            if(Database.createTable()) {
+                Database.deleteTask(PanneauListe.planningList.getModel().getValueAt(selection[0], 0).toString());
+            }
+            ((DefaultTableModel) PanneauListe.planningList.getModel())
+                    .removeRow(selection[0]);
+	    } 
+	    if (b == dupliquer) {
+	    	System.out.println("btn dupliquer clique");
+	    	
+            int[] selection = PanneauListe.planningList.getSelectedRows();
+            for (int i = 0; i < selection.length; i++)
+            {
+                ((DefaultTableModel) PanneauListe.planningList.getModel())
+                        .addRow(new Object[] {PanneauListe.planningList.getValueAt(selection[i],0),
+                        		PanneauListe.planningList.getValueAt(selection[i],1),
+                        		PanneauListe.planningList.getValueAt(selection[i],2) });
+                if (Database.createTable())
+                {
+                    Database.addTask(
+                    		PanneauListe.planningList.getValueAt(selection[i], 0).toString(),
+                                    PanneauListe.planningList.getValueAt(selection[i], 1).toString(),
+                                    PanneauListe.planningList.getValueAt(selection[i], 2).toString(),
+                    				false);
+                }
+            }
+	    } 
+	    if (b == marquer) {
+	    	System.out.println("btn marquer clique");
+	    } 
+	    if (b == supprimer) {
+	    	System.out.println("btn supprimer clique");
+            int[] selection = PanneauListe.planningList.getSelectedRows();
+
+            for (int i = selection.length - 1; i >= 0; i--)
+            {
+                if (Database.createTable())
+                {
+                    Database.deleteTask(PanneauListe.planningList.getModel().getValueAt(i, 0).toString());
+                    ((DefaultTableModel) PanneauListe.planningList.getModel()).removeRow(selection[i]);
+                }
+	    	}
 	    } 
 	    if (b == quitter) { 
 	    	MainWindow.getInstance().dispose();  // on ferme la Jrame si bouton c'est le bouton quitter

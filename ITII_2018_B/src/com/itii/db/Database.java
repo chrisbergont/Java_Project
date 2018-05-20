@@ -11,12 +11,12 @@ public class Database {
     private static final String FIELD_DATE = "date";
     private static final String FIELD_DETAILS = "details";
     private static final String FIELD_STATE = "state";
+    
+    static Connection connection = null;
+    static Statement statement = null;
 
 
     public static boolean createTable(){
-
-        Connection connection = null;
-        Statement statement = null;
         try {
             connection = DriverManager .getConnection("jdbc:sqlite:database/planning.db");
 
@@ -40,9 +40,6 @@ public class Database {
     }
 
     public static void addTask(String name, String date, String details, boolean state){
-        Connection connection = null;
-        Statement statement = null;
-
         try {
             connection = DriverManager .getConnection("jdbc:sqlite:database/planning.db");
 
@@ -53,7 +50,6 @@ public class Database {
         stmt.setString(1, name);
         stmt.setString(2, date);
         stmt.setString(3, details);
-
         stmt.setString(4, state ? "1" : "0");
         stmt.executeUpdate();
         System.out.println("insertion d'une nouvelle entrée dans la table");
@@ -61,14 +57,17 @@ public class Database {
             e.printStackTrace();
         }
     }
+    
+    public static void deleteTask(String name){
+        try {
+            statement.executeQuery("delete from " + TABLE_NAME + " where name = '" + name +"';");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
     public static ArrayList<String> getAllTasks() {
         ArrayList result = new ArrayList();
-
-
-        Connection connection = null;
-        Statement statement = null;
-
         try {
             connection = DriverManager .getConnection("jdbc:sqlite:database/planning.db");
             statement = connection.createStatement();

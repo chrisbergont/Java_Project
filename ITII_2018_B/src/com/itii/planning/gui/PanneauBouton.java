@@ -7,8 +7,11 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
+import com.itii.db.Database;
 import com.itii.planning.gui.task.TaskDialog;
+import com.itii.planning.gui.task.PanneauPrincipalTask;
 
 public class PanneauBouton extends JPanel implements ActionListener // classe du panneau de droite avec les boutons
 {
@@ -59,25 +62,59 @@ public class PanneauBouton extends JPanel implements ActionListener // classe du
 	{
 		JButton b = (JButton ) e.getSource();	// on regarde quel bouton a �t� appuy�
 	    if (b == boutonCreer) {
-	    	System.out.println("btn creer cliquer");
+	    	System.out.println("btn creer clique");
 	    	new TaskDialog(MainWindow.getInstance().getMyMainPanel().getpListe()); // on ouvre une TaskDialog
 	    }
 	    if(b == boutonEditer){
-	    	System.out.println("btn editer cliquer");
+	    	System.out.println("btn editer clique");
+	    	
+	    	int[] selection = PanneauListe.planningList.getSelectedRows();
+            TaskDialog dialog = new TaskDialog(MainWindow.getInstance().getMyMainPanel().getpListe());
+            dialog.MainPanel.nameBox.setText((String) PanneauListe.planningList.getValueAt(selection[0], 0));
+            dialog.MainPanel.calendar.setToolTipText((String) PanneauListe.planningList.getValueAt(selection[0], 1));
+            dialog.MainPanel.commentBox.setText((String) PanneauListe.planningList.getValueAt(selection[0], 2));
+            if(Database.createTable()) {
+                Database.deleteTask(PanneauListe.planningList.getModel().getValueAt(selection[0], 0).toString());
+            }
+            ((DefaultTableModel) PanneauListe.planningList.getModel())
+                    .removeRow(selection[0]);
 	    }
 	    if(b == boutonDupliquer){
-	    	System.out.println("btn dupliquer cliquer");
+	    	System.out.println("btn dupliquer clique");
+	    	
+            int[] selection = PanneauListe.planningList.getSelectedRows();
+            for (int i = 0; i < selection.length; i++)
+            {
+                ((DefaultTableModel) PanneauListe.planningList.getModel())
+                        .addRow(new Object[] {PanneauListe.planningList.getValueAt(selection[i],0),
+                        		PanneauListe.planningList.getValueAt(selection[i],1),
+                        		PanneauListe.planningList.getValueAt(selection[i],2) });
+                if (Database.createTable())
+                {
+                    Database.addTask(
+                    		PanneauListe.planningList.getValueAt(selection[i], 0).toString(),
+                                    PanneauListe.planningList.getValueAt(selection[i], 1).toString(),
+                                    PanneauListe.planningList.getValueAt(selection[i], 2).toString(),
+                    				false);
+                }
+            }
 	    }
+            
 	    if(b == boutonMarquer){
-	    	System.out.println("btn marquer cliquer");
+	    	System.out.println("btn marquer clique");
 	    }
+	    
 	    if(b == boutonSupprimer){
-	    	System.out.println("btn supprimer cliquer");
-	    	System.out.println("row number : " + MainWindow.getInstance().getMyMainPanel().getpListe().getPlanningList().getSelectedRow());
-	    	if(MainWindow.getInstance().getMyMainPanel().getpListe().getPlanningList().getSelectedRow() >= 0)
-	    	{
-	    		MainWindow.getInstance().getMyMainPanel().getpListe().removeTask(
-	    				MainWindow.getInstance().getMyMainPanel().getpListe().getPlanningList().getSelectedRow());
+	    	System.out.println("btn supprimer clique");
+            int[] selection = PanneauListe.planningList.getSelectedRows();
+
+            for (int i = selection.length - 1; i >= 0; i--)
+            {
+                if (Database.createTable())
+                {
+                    Database.deleteTask(PanneauListe.planningList.getModel().getValueAt(i, 0).toString());
+                    ((DefaultTableModel) PanneauListe.planningList.getModel()).removeRow(selection[i]);
+                }
 	    	}
 	    }
 		

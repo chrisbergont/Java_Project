@@ -10,7 +10,7 @@ import javax.swing.table.DefaultTableModel;
 public class PanneauListe extends PanneauTache // Quand on est en mode liste
 {
 	private static final long serialVersionUID = 1L;
-	JTable planningList;
+	static JTable planningList;
 	
 	// constructeur
 	public PanneauListe() {

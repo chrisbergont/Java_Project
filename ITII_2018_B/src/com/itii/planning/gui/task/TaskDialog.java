@@ -17,7 +17,7 @@ public class TaskDialog extends JDialog implements ActionListener // nouvelle fe
 	private static final long serialVersionUID = 1L;
 	PanneauTexte LeftBorder = new PanneauTexte(); // on d�clare le panneau de gaucge avec le text
 	PanneauBas BotBorder = new PanneauBas(this); // on d�clare le panneau du bas avec les boutons
-	PanneauPrincipalTask MainPanel = new PanneauPrincipalTask(); // On d�clare le panneau central
+	public PanneauPrincipalTask MainPanel = new PanneauPrincipalTask(); // On d�clare le panneau central
 	PanneauListe pl;
 	
 	public TaskDialog( PanneauListe panneauList ) // on cr�e la fen�tre
