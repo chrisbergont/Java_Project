@@ -11,7 +11,6 @@ import javax.swing.table.DefaultTableModel;
 
 import com.itii.db.Database;
 import com.itii.planning.gui.task.TaskDialog;
-import com.itii.planning.gui.task.PanneauPrincipalTask;
 
 public class PanneauBouton extends JPanel implements ActionListener // classe du panneau de droite avec les boutons
 {

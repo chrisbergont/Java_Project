@@ -59,8 +59,8 @@ public class Database {
     }
     
     public static void deleteTask(String name){
-        try {
-            statement.executeQuery("delete from " + TABLE_NAME + " where name = '" + name +"';");
+    	try {
+            statement.executeUpdate("delete from " + TABLE_NAME + " where name = '" + name +"';");
         } catch (SQLException e) {
             e.printStackTrace();
         }
