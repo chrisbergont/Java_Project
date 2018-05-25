@@ -1,14 +1,13 @@
 Reste à faire Priorité 1 :
 - commentaires et lisibilité du code
-- Gestion du bouton Marquer la tache (+gestion dans barre de menu)
 - Lors de l'appli sur bouton édité -> date non remplie
 - Enregistrement de la tache dupliquée
+- Optimisations graphiques
+- Test et resolution de bugs
 
 Reste à faire Priorité 2:
-- Gestion de la vue Semaine
-- Gestion de la vue Mois
-- Optimisations graphiques
 - gestion des warnings
+- Gestion du bouton Marquer la tache (+gestion dans barre de menu) (optionnel)
 
 Travail fait : 
 - suppression Erreur lors de la suppression d'une tache (+gestion dans barre de menu)
