@@ -9,22 +9,22 @@ import javax.swing.JTextField;
 import org.jdatepicker.JDatePicker;
 import org.jdatepicker.UtilDateModel;
 
-public class PanneauPrincipalTask extends JPanel // nouvelle fenetre pour cr�ation de t�che
+public class PanneauPrincipalTask extends JPanel // nouvelle fenetre pour creation de tache
 {
 	private static final long serialVersionUID = 1L;
 	public JTextField nameBox = new JTextField(40); // On cr�e une zone de text
 	//private JTextField dateBox = new JTextField(20);
 	public JTextField commentBox = new JTextField(240);
 	
-	public JDatePicker calendar = getCalendar(); // on d�clare le JdatePicker
+	public JDatePicker calendar = getCalendar(); // on declare le JdatePicker
 
 	public JDatePicker getCalendar() // accesseur calendrier
 	{
 		if (calendar == null) // si y'a pas de calendrier
 		{
-			UtilDateModel model = new UtilDateModel(); // on d�clare un model
-			Calendar cal = Calendar.getInstance(); // on cr�e le calendrier
-			model.setDate(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_WEEK)); // on recup�re la bonne p�riode
+			UtilDateModel model = new UtilDateModel(); // on declare un model
+			Calendar cal = Calendar.getInstance(); // on cree le calendrier
+			model.setDate(cal.get(Calendar.YEAR), cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_WEEK)); // on recupere la bonne periode
 			calendar = new JDatePicker(model, "dd-MM-yyyy");
 		}
 		return calendar;
@@ -32,7 +32,7 @@ public class PanneauPrincipalTask extends JPanel // nouvelle fenetre pour cr�a
 
 	public PanneauPrincipalTask() // constructeur
 	{
-		JPanel NamePanel = new JPanel(); // On cr�e un pannel
+		JPanel NamePanel = new JPanel(); // On cree un pannel
 		
 		NamePanel.add(nameBox); // on ajoute la zone de texte au pannel
 		//nameBox.setColumns(10);
@@ -50,7 +50,7 @@ public class PanneauPrincipalTask extends JPanel // nouvelle fenetre pour cr�a
 		CommentPanel.add(commentBox);
 		//commentBox.setColumns(23);
 
-		GridLayout grille = new GridLayout(2, 0, 10, 10); // on lui cr�e une grille (nb lignes, nb colonnes, horizontal
+		GridLayout grille = new GridLayout(2, 0, 10, 10); // on lui cree une grille (nb lignes, nb colonnes, horizontal
 															// gap, vertical gap)
 		CommentPanel.setLayout(grille); // on ajoute la grille
 

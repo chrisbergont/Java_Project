@@ -11,12 +11,12 @@ public class PanneauTexte extends JPanel // nouvelle fenetre pour cr�ation de 
 
 	public PanneauTexte() // constructeur
 	{
-		// Ajout des Labels a gauche de la fen�tre
-		GridLayout grilleName = new GridLayout(8, 1, 0, 10); // on lui cr�e une grille (nb lignes, nb colonnes,
+		// Ajout des Labels a gauche de la fenetre
+		GridLayout grilleName = new GridLayout(8, 1, 0, 10); // on lui cree une grille (nb lignes, nb colonnes,
 																// horizontal gap, vertical gap)
 		setLayout(grilleName); // on met la grille
 
-		// On cr�e tout les labels
+		// On cree tout les labels
 		JLabel labelTask = new JLabel("Nom de la tache : ");
 		JLabel labelDate = new JLabel("Date due : ");
 		JLabel labelDetails = new JLabel("Details : ");

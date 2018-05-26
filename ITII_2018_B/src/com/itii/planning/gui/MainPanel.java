@@ -3,14 +3,14 @@ package com.itii.planning.gui;
 import javax.swing.*;
 import java.awt.*;
 
-public class MainPanel extends JPanel{ // classe MainPanel d�riv�e d'un Jpanel
+public class MainPanel extends JPanel{ // classe MainPanel derivee d'un Jpanel
 
 	private static final long serialVersionUID = 1L;
 	
 	// creation des pannels du mainpannel
 	private PanneauTop pTop = new PanneauTop();
 	private PanneauBouton pBtn = new PanneauBouton();
-	//dont 3 panneau supperpositionn�e
+	//dont 3 panneau supperpositionnes
 	private PanneauListe pListe = new PanneauListe();
 	//private PanneauMois pMois = new PanneauMois();
 	//private PanneauSemaine pSemaine = new PanneauSemaine();	
@@ -20,7 +20,7 @@ public class MainPanel extends JPanel{ // classe MainPanel d�riv�e d'un Jpan
 		setBackground(Color.gray); // on met une couleur au fond
 		//setVisible(true);
 
-		setLayout(new BorderLayout()); // on cr�e un borderLayout
+		setLayout(new BorderLayout()); // on creer un borderLayout
 
 		// positionnement des 4 pannels dans le borderLayout
 		add(pTop, BorderLayout.NORTH);

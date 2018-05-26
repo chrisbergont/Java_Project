@@ -26,13 +26,13 @@ public class Database {
                     + FIELD_NAME + " string, " // Name
                     + FIELD_DATE + " text, " // Details
                     + FIELD_DETAILS + " text, " // date as ISO8601 strings ("YYYY-MM-DD HH:MM:SS.SSS").
-                    + FIELD_STATE + " boolean " + " )"; // marquée
-            System.out.println("table \"" + TABLE_NAME + "\" créée ou existante ");
+                    + FIELD_STATE + " boolean " + " )"; // marquer
+            System.out.println("table \"" + TABLE_NAME + "\" cree ou existante ");
 
             Statement stmt = connection.createStatement();
             stmt.execute(sqlCreate);
         } catch (SQLException e) {
-            System.out.println(" Erreur : Table non créée");
+            System.out.println(" Erreur : Table non creee");
             e.printStackTrace();
             return false;
         }
@@ -52,7 +52,7 @@ public class Database {
         stmt.setString(3, details);
         stmt.setString(4, state ? "1" : "0");
         stmt.executeUpdate();
-        System.out.println("insertion d'une nouvelle entrée dans la table");
+        System.out.println("insertion d'une nouvelle entree dans la table");
         } catch (SQLException e) {
             e.printStackTrace();
         }

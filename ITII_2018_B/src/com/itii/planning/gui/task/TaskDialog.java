@@ -10,17 +10,17 @@ import javax.swing.JDialog;
 
 import com.itii.planning.gui.PanneauListe;
 
-public class TaskDialog extends JDialog implements ActionListener // nouvelle fenetre pour cr�ation de t�che
+public class TaskDialog extends JDialog implements ActionListener // nouvelle fenetre pour creation de tache
 {
 	
 	public String tache;
 	private static final long serialVersionUID = 1L;
-	PanneauTexte LeftBorder = new PanneauTexte(); // on d�clare le panneau de gaucge avec le text
-	PanneauBas BotBorder = new PanneauBas(this); // on d�clare le panneau du bas avec les boutons
-	public PanneauPrincipalTask MainPanel = new PanneauPrincipalTask(); // On d�clare le panneau central
+	PanneauTexte LeftBorder = new PanneauTexte(); // on declare le panneau de gaucge avec le text
+	PanneauBas BotBorder = new PanneauBas(this); // on declare le panneau du bas avec les boutons
+	public PanneauPrincipalTask MainPanel = new PanneauPrincipalTask(); // On declare le panneau central
 	PanneauListe pl;
 	
-	public TaskDialog( PanneauListe panneauList ) // on cr�e la fen�tre
+	public TaskDialog( PanneauListe panneauList ) // on cree la fenetre
 	{
 		initialize();
 		pl = panneauList;
@@ -47,10 +47,10 @@ public class TaskDialog extends JDialog implements ActionListener // nouvelle fe
 		validate();
 		repaint();
 	}
-	public void actionPerformed(ActionEvent e) // si on a cliqu� sur boutonCreer
+	public void actionPerformed(ActionEvent e) // si on a clique sur boutonCreer
 	{	
 		tache = "";
-		JButton b = (JButton ) e.getSource();	// on regarde quel bouton a �t� appuy�
+		JButton b = (JButton ) e.getSource();	// on regarde quel bouton a ete appuye
 	    if (b == BotBorder.Annuler) {
 	    	this.dispose();  // on ferme la TaskDialog si bouton Annuler appuyer
 	    }

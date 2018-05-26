@@ -16,7 +16,7 @@ public class PanneauBouton extends JPanel implements ActionListener // classe du
 {
 	private static final long serialVersionUID = 1L;
 
-	// on cr�e tout les boutons
+	// on creer tous les boutons
 	JLabel spaceup = new JLabel(" "); // on fait un bouton vide pour laisser un espace en haut
 	JButton boutonCreer = new JButton("Creer");
 	JButton boutonEditer = new JButton("Editer");
@@ -26,15 +26,15 @@ public class PanneauBouton extends JPanel implements ActionListener // classe du
 	JLabel space = new JLabel(" "); // on fait un bouton vide pour laisser un espace en bas
 	JLabel space1 = new JLabel(" "); // on fait un bouton vide pour laisser un espace en bas
 	JLabel space2 = new JLabel(" "); // on fait un bouton vide pour laisser un espace en bas
-	String format = "dd/MM/yyyy"; // on cr�e un format de date
+	String format = "dd/MM/yyyy"; // on cree un format de date
 	java.text.SimpleDateFormat formater = new java.text.SimpleDateFormat(format);
-	java.util.Date date = new java.util.Date(); // on recup�re la date
+	java.util.Date date = new java.util.Date(); // on recupere la date
 	JLabel dateJour = new JLabel(formater.format(date)); // on affiche la date
 	public PanneauBouton() // constructeur
 	{
 		setBackground(Color.white); // couleur de fond
 		add(spaceup);
-		GridLayout grille = new GridLayout(15, 1, 0, 10); // on lui cr�e une grille (nb lignes, nb colonnes, horizontal
+		GridLayout grille = new GridLayout(15, 1, 0, 10); // on lui cree une grille (nb lignes, nb colonnes, horizontal
 															// gap, vertical gap)
 		setLayout(grille); // on integre la grille
 
@@ -49,7 +49,7 @@ public class PanneauBouton extends JPanel implements ActionListener // classe du
 		add(boutonDupliquer);
 		add(dateJour);
 
-		boutonCreer.addActionListener(this); // on �coute si y'a une action
+		boutonCreer.addActionListener(this); // on ecoute si y'a une action sur le bouton creer
 		boutonDupliquer.addActionListener(this);
 		boutonEditer.addActionListener(this);
 		boutonMarquer.addActionListener(this);
@@ -57,9 +57,9 @@ public class PanneauBouton extends JPanel implements ActionListener // classe du
 		
 	}
 
-	public void actionPerformed(ActionEvent e) // si on a cliqu� sur boutonCreer
+	public void actionPerformed(ActionEvent e) // si on a clique sur boutonCreer
 	{
-		JButton b = (JButton ) e.getSource();	// on regarde quel bouton a �t� appuy�
+		JButton b = (JButton ) e.getSource();	// on regarde quel bouton a ete appuye
 	    if (b == boutonCreer) {
 	    	System.out.println("btn creer clique");
 	    	new TaskDialog(MainWindow.getInstance().getMyMainPanel().getpListe()); // on ouvre une TaskDialog
@@ -75,8 +75,7 @@ public class PanneauBouton extends JPanel implements ActionListener // classe du
             if(Database.createTable()) {
                 Database.deleteTask(PanneauListe.planningList.getModel().getValueAt(selection[0], 0).toString());
             }
-            ((DefaultTableModel) PanneauListe.planningList.getModel())
-                    .removeRow(selection[0]);
+            ((DefaultTableModel) PanneauListe.planningList.getModel()).removeRow(selection[0]);
 	    }
 	    if(b == boutonDupliquer){
 	    	System.out.println("btn dupliquer clique");
@@ -90,11 +89,9 @@ public class PanneauBouton extends JPanel implements ActionListener // classe du
                         		PanneauListe.planningList.getValueAt(selection[i],2) });
                 if (Database.createTable())
                 {
-                    Database.addTask(
-                    		PanneauListe.planningList.getValueAt(selection[i], 0).toString(),
+                    Database.addTask(PanneauListe.planningList.getValueAt(selection[i], 0).toString(),
                                     PanneauListe.planningList.getValueAt(selection[i], 1).toString(),
-                                    PanneauListe.planningList.getValueAt(selection[i], 2).toString(),
-                    				false);
+                                    PanneauListe.planningList.getValueAt(selection[i], 2).toString(),false);
                 }
             }
 	    }

@@ -18,17 +18,17 @@ public class PanneauListe extends PanneauTache // Quand on est en mode liste
 
 		String title[] = { "Nom de la tache", "Date", "Details" }; // on a une liste de string
 
-		DefaultTableModel tableModel = new DefaultTableModel(title, 0); // on d�clare un tableau qvec lq liste comme nom
-		planningList = new JTable(tableModel); // on cr�e un tableau
+		DefaultTableModel tableModel = new DefaultTableModel(title, 0); // on declare un tableau qvec lq liste comme nom
+		planningList = new JTable(tableModel); // on cree un tableau
 
 		planningList.setFillsViewportHeight(true);
 
-		for(String t : Database.getAllTasks())//On charger la BDD
-		{
+		//On charger la BDD
+		for(String t : Database.getAllTasks()) {
 			addTaskInView(t);
 		}
 
-		JScrollPane scp = new JScrollPane(planningList); // on cr�e un JscrollPane si ca d�passe
+		JScrollPane scp = new JScrollPane(planningList); // on cree un JscrollPane si ca depasse
 		add(scp, BorderLayout.CENTER);// on l'ajoute
 	}
 	

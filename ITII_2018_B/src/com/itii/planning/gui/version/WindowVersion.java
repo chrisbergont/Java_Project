@@ -6,7 +6,7 @@ public class WindowVersion extends JOptionPane //nouvelle fenetre pour la versio
 {
 	private static final long serialVersionUID = 1L;
 
-	public WindowVersion() // on crée la fenêtre version
+	public WindowVersion() // on crée la fenetre version
 	{
 		showMessageDialog(null, "Version Beta\n Licence : Sébastien MARTAGEX", "Version", JOptionPane.INFORMATION_MESSAGE); //on affiche un message d'information
 	}

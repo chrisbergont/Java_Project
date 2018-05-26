@@ -67,25 +67,25 @@ public class PMenuBar extends JMenuBar implements ActionListener // classe de la
 		help.add(aide);
 		help.add(version);
 		
-		creer.addActionListener(this); // on �coute si y'a une action
-		editer.addActionListener(this); // on �coute si y'a une action
-		marquer.addActionListener(this); // on �coute si y'a une action
-		dupliquer.addActionListener(this); // on �coute si y'a une action
-		supprimer.addActionListener(this); // on �coute si y'a une action
-		quitter.addActionListener(this); // on �coute si y'a une action
-		aide.addActionListener(this); // on �coute si y'a une action
-		version.addActionListener(this); // on �coute si y'a une action	
+		creer.addActionListener(this); // on ecoute si y'a une action
+		editer.addActionListener(this); // on ecoute si y'a une action
+		marquer.addActionListener(this); // on ecoute si y'a une action
+		dupliquer.addActionListener(this); // on ecoute si y'a une action
+		supprimer.addActionListener(this); // on ecoute si y'a une action
+		quitter.addActionListener(this); // on ecoute si y'a une action
+		aide.addActionListener(this); // on ecoute si y'a une action
+		version.addActionListener(this); // on ecoute si y'a une action	
 	}
 
-
-	public static PMenuBar getMyMenuBar() // accesseur Barre de menu
-	{
+	// accesseur Barre de menu
+	public static PMenuBar getMyMenuBar() { 
+	
 		return new PMenuBar();
 	}
 	
-	public void actionPerformed(ActionEvent e) // si on a cliqu� sur boutonCreer
+	public void actionPerformed(ActionEvent e) // si on a clique sur boutonCreer
 	{	
-		JMenuItem b = (JMenuItem ) e.getSource();	// on regarde quel bouton a �t� appuy�
+		JMenuItem b = (JMenuItem ) e.getSource();	// on regarde quel bouton a ete appuye
 	    if (b == creer) {
 	    	System.out.println("btn creer clique");
 	    	new TaskDialog(MainWindow.getInstance().getMyMainPanel().getpListe()); // on ouvre une TaskDialog	    
@@ -101,26 +101,21 @@ public class PMenuBar extends JMenuBar implements ActionListener // classe de la
             if(Database.createTable()) {
                 Database.deleteTask(PanneauListe.planningList.getModel().getValueAt(selection[0], 0).toString());
             }
-            ((DefaultTableModel) PanneauListe.planningList.getModel())
-                    .removeRow(selection[0]);
+            ((DefaultTableModel) PanneauListe.planningList.getModel()).removeRow(selection[0]);
 	    } 
 	    if (b == dupliquer) {
 	    	System.out.println("btn dupliquer clique");
 	    	
             int[] selection = PanneauListe.planningList.getSelectedRows();
-            for (int i = 0; i < selection.length; i++)
-            {
+            for (int i = 0; i < selection.length; i++) {
                 ((DefaultTableModel) PanneauListe.planningList.getModel())
                         .addRow(new Object[] {PanneauListe.planningList.getValueAt(selection[i],0),
                         		PanneauListe.planningList.getValueAt(selection[i],1),
                         		PanneauListe.planningList.getValueAt(selection[i],2) });
-                if (Database.createTable())
-                {
-                    Database.addTask(
-                    		PanneauListe.planningList.getValueAt(selection[i], 0).toString(),
+                if (Database.createTable()){
+                    Database.addTask(PanneauListe.planningList.getValueAt(selection[i], 0).toString(),
                                     PanneauListe.planningList.getValueAt(selection[i], 1).toString(),
-                                    PanneauListe.planningList.getValueAt(selection[i], 2).toString(),
-                    				false);
+                                    PanneauListe.planningList.getValueAt(selection[i], 2).toString(), false);
                 }
             }
 	    } 
@@ -144,7 +139,7 @@ public class PMenuBar extends JMenuBar implements ActionListener // classe de la
 	    	MainWindow.getInstance().dispose();  // on ferme la Jrame si bouton c'est le bouton quitter
 	    }
 	    if (b == aide) {
-	    	WindowAide aide = new WindowAide(); //on ouvre une f�netre avec les instructions d'aide
+	    	WindowAide aide = new WindowAide(); //on ouvre une fenetre avec les instructions d'aide
 	    }
 	    if (b == version) {
 	    	WindowVersion version = new WindowVersion(); //on ouvre une fenetre d'information sur le numero de version
